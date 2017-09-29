@@ -1,0 +1,9 @@
+{
+    "extends": "../tsconfig.json",
+    "angularCompilerOptions": {
+        "entryModule": "./tower/module#TowerModule"
+    },
+    "exclude": [
+        "src/main.server.aot.ts"
+    ]
+}
