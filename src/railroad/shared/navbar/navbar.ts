@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'railroad-navbar',
+    selector: 'rr-navbar',
     styleUrls: [ './navbar.scss' ],
     templateUrl: './navbar.html'
 })

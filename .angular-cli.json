@@ -17,7 +17,7 @@
             "main": "main.ts",
             "polyfills": "polyfills.ts",
             "tsconfig": "tsconfig.browser.json",
-            "prefix": "railroad",
+            "prefix": "rr",
             "styles": [
                 "styles.scss"
             ],

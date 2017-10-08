@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'railroad',
+    selector: 'rr-base',
     styleUrls: ['./base.scss'],
     templateUrl: './base.html'
 })

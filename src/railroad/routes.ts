@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes } from '@angular/router';
 
-const TOWER_ROUTES: Routes = [
+const RR_ROUTES: Routes = [
         {
             loadChildren: './landing/module#LandingModule',
             path: ''
@@ -17,7 +17,7 @@ const TOWER_ROUTES: Routes = [
         RouterModule
     ],
     imports: [
-        RouterModule.forRoot(TOWER_ROUTES)
+        RouterModule.forRoot(RR_ROUTES)
     ]
 })
 export class RailroadRouterModule {

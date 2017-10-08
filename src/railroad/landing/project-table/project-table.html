@@ -2,23 +2,24 @@
     <table class="table">
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Username</td>
-                <td>Date of Birth</td>
-                <td>Phone Number</td>
-                <td>insurance</td>
+                <th>Title</th>
+                <th>Division</th>
+                <th>Project Owner</th>
+                <th>Budget</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Modified</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let project of project">
-                <pre>
-                    {{ project }}
-                </pre>
-                <!-- <td>{{ user.name }}</td>
-                <td>{{ user.details.username }}</td>
-                <td>{{ user.details.dateofbirth }}</td>
-                <td>{{ user.details.phonenumber }}</td>
-                <td>{{ user.details.insurance }}</td> -->
+                <td>{{ project.title }}</td>
+                <td>{{ project.division }}</td>
+                <td>{{ project.owner }}</td>
+                <td>{{ project.budget }}</td>
+                <td>{{ project.status }}</td>
+                <td>{{ project.created }}</td>
+                <td>{{ project.modified }}</td>
             </tr>
         </tbody>
     </table>

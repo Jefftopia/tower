@@ -10,12 +10,6 @@ import { RailroadRouterModule } from './routes';
 import { AppLoadConfig } from './core/services/app-load';
 import { appLoad } from './app-load';
 
-import { StoreModule } from '@ngrx/store';
-import { RAILROAD_DEFAULT_STATE, RAILROAD_REDUCERS } from './core/reducers/index';
-
-import { EffectsModule } from '@ngrx/effects';
-import { RAILROAD_EFFECTS } from './core/effects/index';
-
 @NgModule({
     bootstrap: [ BaseComponent ],
     declarations: [ BaseComponent ],
@@ -29,8 +23,6 @@ import { RAILROAD_EFFECTS } from './core/effects/index';
         BrowserModule,
         BrowserAnimationsModule,
         CoreModule,
-        EffectsModule.forRoot(RAILROAD_EFFECTS),
-        StoreModule.forRoot(RAILROAD_REDUCERS, { initialState: RAILROAD_DEFAULT_STATE }),
         RailroadRouterModule,
         NgbModule.forRoot()
     ],

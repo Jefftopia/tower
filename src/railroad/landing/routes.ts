@@ -6,17 +6,18 @@ import { Observable } from 'rxjs/Observable';
 import { Project } from 'models/project';
 import { Store } from '@ngrx/store';
 import { IRailroadState } from '../core/interfaces';
+import * as ProjectActions from '../core/actions/projects';
 
 @Injectable()
-export class ProjectsResolve implements Resolve<Project[]> {
+export class ProjectsResolve implements Resolve<void> {
     private store: Store<IRailroadState>;
 
     constructor(store: Store<IRailroadState>) {
         Object.assign(this, { store });
     }
 
-    public resolve(): Observable<Project[]> {
-        return this.store.select('projects');
+    public resolve(): Observable<void> {
+        return Observable.of(this.store.dispatch({ type: ProjectActions.GET_PROJECTS }));
     }
 }
 

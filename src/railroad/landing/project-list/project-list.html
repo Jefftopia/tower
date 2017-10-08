@@ -1,4 +1,4 @@
 <div>
-    <railroad-user-table [projects]="project"></railroad-user-table>
-    <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+    <rr-project-table [projects]="project | async"></rr-project-table>
+    <!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
 </div>
