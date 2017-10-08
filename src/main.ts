@@ -1,19 +1,19 @@
-import { ITowerOptions } from './tower/core/interfaces';
-import { CONFIG_TOKEN } from './tower/core/constants';
+import { IRailroadOptions } from './railroad/core/interfaces';
+import { CONFIG_TOKEN } from './railroad/core/constants';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode, NgModuleRef } from '@angular/core';
-import { TowerModule } from './tower/module';
+import { RailroadModule } from './railroad/module';
 
 import './styles.scss';
 
-const windowRef: TowerWindow = window;
-const configApi: string = windowRef.towerOptions.fetchUrl;
+const windowRef: RailroadWindow = window;
+const configApi: string = windowRef.railroadOptions.fetchUrl;
 
 if (process.env.ENV === 'production') {
     enableProdMode();
 }
 
-export function parseOptions(options: ITowerOptions): Promise<NgModuleRef<TowerModule>> {
+export function parseOptions(options: IRailroadOptions): Promise<NgModuleRef<RailroadModule>> {
     return platformBrowserDynamic(
         [
             {
@@ -21,10 +21,10 @@ export function parseOptions(options: ITowerOptions): Promise<NgModuleRef<TowerM
                 useValue: options
             }
         ]
-    ).bootstrapModule(TowerModule);
+    ).bootstrapModule(RailroadModule);
 }
 
-export function parseResponse(res: Response): Promise<NgModuleRef<TowerModule>> {
+export function parseResponse(res: Response): Promise<NgModuleRef<RailroadModule>> {
     return res.json().then(parseOptions);
 }
 

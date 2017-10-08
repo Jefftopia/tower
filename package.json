@@ -1,7 +1,7 @@
 {
-  "name": "towerview-ax",
+  "name": "railroad-project-dashboard",
   "version": "0.1.0-SNAPSHOT",
-  "description": "Towerview AX Demo",
+  "description": "Railroad Project Dashboard",
   "scripts": {
     "build:users": "node ./bin/ndjson2json ./data/users.json > ./api/users.json",
     "build:compliance": "node ./bin/ndjson2json ./data/compliances.json > ./api/compliances.json",
@@ -15,8 +15,8 @@
     "serve:static": "cd dist && http-server --cors",
     "lint": "npm run ts-lint && npm run scss-lint",
     "scss-lint": "./node_modules/sass-lint/bin/sass-lint.js -c scsslint.yml -v -q",
-    "ts-lint": "./node_modules/.bin/tslint --type-check -c tslint.json --project . './src/tower/**/*.ts'",
-    "lint:fix": "./node_modules/.bin/tslint --fix --type-check -c tslint.json --project . './src/tower/**/*.ts'"
+    "ts-lint": "./node_modules/.bin/tslint --type-check -c tslint.json --project . './src/railroad/**/*.ts'",
+    "lint:fix": "./node_modules/.bin/tslint --fix --type-check -c tslint.json --project . './src/railroad/**/*.ts'"
   },
   "license": "MIT",
   "dependencies": {
@@ -32,6 +32,8 @@
     "@angular/platform-server": "^4.3.6",
     "@angular/router": "~4.3.6",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
+    "@ngrx/effects": "^4.0.5",
+    "@ngrx/store": "^4.0.3",
     "@nguniversal/express-engine": "^1.0.0-beta.2",
     "@nguniversal/module-map-ngfactory-loader": "^1.0.0-beta.3",
     "@types/d3": "^4.9.0",

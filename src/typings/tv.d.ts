@@ -1,3 +1,0 @@
-type Demo = {
-    field: string;
-}

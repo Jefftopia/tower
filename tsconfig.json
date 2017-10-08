@@ -22,8 +22,8 @@
         "outDir": "./dist/out-tsc",
         "baseUrl": ".",
         "paths": {
-            "core/*": [ "./src/tower/core/*" ],
-            "models/*": [ "./src/tower/models/*" ]
+            "core/*": [ "./src/railroad/core/*" ],
+            "models/*": [ "./src/railroad/models/*" ]
         },
         "typeRoots": [
             "./typings",

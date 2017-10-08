@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "project": {
-        "name": "towerview"
+        "name": "railroad-project-dashboard"
     },
     "apps": [
         {
@@ -10,14 +10,14 @@
             "assets": [
                 "assets",
                 "favicon.ico",
-                "tower-options.json",
+                "railroad-options.json",
                 "api"
             ],
             "index": "index.html",
             "main": "main.ts",
             "polyfills": "polyfills.ts",
             "tsconfig": "tsconfig.browser.json",
-            "prefix": "tower",
+            "prefix": "railroad",
             "styles": [
                 "styles.scss"
             ],
@@ -27,7 +27,7 @@
                 ]
             },
             "scripts": [
-                "../fetch-options.js"
+                "fetch-options.js"
             ],
             "environmentSource": "environments/environment.ts",
             "environments": {
