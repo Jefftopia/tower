@@ -21,10 +21,10 @@ export class LandingBase implements OnInit {
     }
 
     public ngOnInit(): void {
-        // this.projects = this.store.select((state: IRailroadState) => {
-        //     return state.projects;
-        // });
+        this.projects = this.store.select((state: IRailroadState) => {
+            return state.projects;
+        });
 
-        this.projects = this.store.select('projects');
+        // this.projects = this.store.select('projects');
     }
 }

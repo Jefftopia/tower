@@ -6,11 +6,8 @@ export const GET_SUCCESS: string = 'GET_SUCCESS';
 
 export class Get implements Action {
     public readonly type: string = GET_PROJECTS;
-    public payload: Project[];
 
-    constructor(projects?: Project[]) {
-        this.payload = projects;
-    }
+    constructor(public payload: string) {}
 }
 
 export class GetSuccess implements Action {

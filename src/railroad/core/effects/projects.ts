@@ -11,25 +11,16 @@ import * as ProjectsActions from '../actions/projects';
 export class ProjectsEffects {
 
     @Effect() public get$: Observable<Action> = this.actions.ofType<ProjectsActions.Get>(ProjectsActions.GET_PROJECTS)
-        .switchMap((action: ProjectsActions.Get) => {
-            return this.api.getProjects().map((projects: Project[]) => {
-                return new ProjectsActions.GetSuccess(projects);
-            });
+        .map((action: ProjectsActions.Get) => action.payload)
+        .mergeMap((payload: string) => {
+            return this.api.getProjects();
+        })
+        .map((projects: Project[]) => {
+            return new ProjectsActions.GetSuccess(projects);
+        })
+        .catch(() => {
+            return Observable.of(new ProjectsActions.GetSuccess([]));
         });
 
-    // @Effect() public get$: Observable<Action> = this.actions.ofType<ProjectsActions.Get>(ProjectsActions.GET_PROJECTS)
-    //     .map((action: ProjectsActions.Get) => {
-    //         return action || [];
-    //     })
-    //     // .withLatestFrom(this.store.select('projects'))
-    //     .switchMap((action: ProjectsActions.Get) => {
-    //         return this.api.getProjects().map((projectsData: Project[]) => {
-    //             return new ProjectsActions.GetSuccess(projectsData);
-    //         });
-    //     })
-    //     .catch(() => {
-    //         return Observable.of(new ProjectsActions.GetSuccess([]));
-    //     });
-
-    constructor(private api: ApiService, private actions: Actions, private store: Store<IRailroadState>) {}
+    constructor(private api: ApiService, private actions: Actions, private store: Store<IRailroadState>) { }
 }
