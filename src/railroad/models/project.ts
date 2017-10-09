@@ -1,4 +1,4 @@
-export interface IProjectJSON {
+export interface IProjectFields {
     title: string;
     division: string;
     project_owner?: string;
@@ -7,9 +7,12 @@ export interface IProjectJSON {
     status: string;
     created: Date;
     modified: Date;
+    id: number;
+    isEditing: boolean;
 }
 
-export class Project implements IProjectJSON {
+export class Project implements IProjectFields {
+    public id: number;
     public title: string;
     public division: string;
     public projectOwner: string;
@@ -17,25 +20,12 @@ export class Project implements IProjectJSON {
     public status: string;
     public created: Date;
     public modified: Date;
+    public isEditing: boolean = false;
 
-    public static DOB_RE: RegExp = /(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/;
-
-    private static defaults(): IProjectJSON {
-        return {
-            title: '',
-            division: '',
-            project_owner: '',
-            budget: undefined,
-            status: '',
-            created: new Date(),
-            modified: new Date()
-        };
-    }
-
-    constructor(data: IProjectJSON) {
-        data.projectOwner = data.project_owner;
+    constructor(data: IProjectFields) {
+        data.projectOwner = data.projectOwner || data.project_owner;
         delete data.project_owner;
 
-        Object.assign(this, Project.defaults(), data);
+        Object.assign(this, data);
     }
 }

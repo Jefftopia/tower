@@ -9,18 +9,13 @@
                 <th>Status</th>
                 <th>Created</th>
                 <th>Modified</th>
+                <th>Actions</th>
             </tr>
+            <tr rr-filter-row [filters]="filters" (filterQueries)="onFilterChange($event, filters)"></tr>
         </thead>
-        <tbody>
-            <tr *ngFor="let project of projects">
-                <td>{{ project.title }}</td>
-                <td>{{ project.division }}</td>
-                <td>{{ project.owner }}</td>
-                <td>{{ project.budget }}</td>
-                <td>{{ project.status }}</td>
-                <td>{{ project.created }}</td>
-                <td>{{ project.modified }}</td>
-            </tr>
+        <tbody *ngFor="let project of projects">
+            <tr rr-row *ngIf="!project.isEditing" (editing)="onEdit($event, project)" [project]="project"></tr>
+            <tr rr-edit-row *ngIf="project.isEditing" (saved)="onSave($event, project)" [project]="project"></tr>
         </tbody>
     </table>
 </div>

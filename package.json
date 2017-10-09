@@ -31,7 +31,6 @@
     "@angular/platform-browser-dynamic": "~4.3.6",
     "@angular/platform-server": "^4.3.6",
     "@angular/router": "~4.3.6",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
     "@ngrx/effects": "^4.0.5",
     "@ngrx/store": "^4.0.3",
     "@nguniversal/express-engine": "^1.0.0-beta.2",

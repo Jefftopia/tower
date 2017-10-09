@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Project } from 'models/project';
+import { Filters } from 'models/filters';
 
 @Component({
     selector: 'rr-project-list',
@@ -8,5 +9,5 @@ import { Project } from 'models/project';
 })
 export class ProjectList {
     @Input() public projects: Project[];
-    public page: number = 1;
+    @Input() public filters: Filters;
 }

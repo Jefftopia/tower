@@ -4,18 +4,22 @@ import { SharedModule } from '../shared/module';
 import { LandingBase } from './base/base';
 import { ProjectList } from './project-list/project-list';
 import { ProjectTable } from './project-table/project-table';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { Row } from './row/row';
+import { EditRow } from './edit-row/edit-row';
+import { FilterRow } from './filter-row/filter-row';
 
 @NgModule({
     declarations: [
         LandingBase,
         ProjectList,
-        ProjectTable
+        ProjectTable,
+        Row,
+        EditRow,
+        FilterRow
     ],
     imports: [
         LandingRoutesModule,
-        SharedModule,
-        NgbPaginationModule
+        SharedModule
     ]
 })
 export class LandingModule {

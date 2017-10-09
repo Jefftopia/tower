@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 import { ApiService } from '../services/api';
 import { IRailroadState } from '../interfaces';
-import { Project } from '../../models/project';
+import { IProjectFields, Project } from '../../models/project';
 import * as ProjectsActions from '../actions/projects';
 
 @Injectable()
@@ -15,7 +16,13 @@ export class ProjectsEffects {
         .mergeMap((payload: string) => {
             return this.api.getProjects();
         })
-        .map((projects: Project[]) => {
+        .map((response: Response) => {
+            const projects: Project[] = response.json().map((project: IProjectFields, index: number) => {
+                project.id = index;
+
+                return new Project(project);
+            });
+
             return new ProjectsActions.GetSuccess(projects);
         })
         .catch(() => {

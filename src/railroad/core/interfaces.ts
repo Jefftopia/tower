@@ -1,4 +1,5 @@
 import { Project } from '../models/project';
+import { Filters } from '../models/filters';
 
 declare global {
 
@@ -9,6 +10,7 @@ declare global {
 
 export interface IRailroadState {
     projects: Project[];
+    filters: Filters;
 }
 
 export interface IOptionsFetch {

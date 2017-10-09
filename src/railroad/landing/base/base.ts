@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Project } from 'models/project';
+import { Filters } from 'models/filters';
 import { Subscription } from 'rxjs/Subscription';
 import { Store } from '@ngrx/store';
 import { IRailroadState } from '../../core/interfaces';
@@ -13,6 +14,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class LandingBase implements OnInit {
     public projects: Observable<Project[]>;
+    public filters: Observable<Filters>;
     private store: Store<IRailroadState>;
     private route: ActivatedRoute;
 
@@ -21,10 +23,7 @@ export class LandingBase implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.projects = this.store.select((state: IRailroadState) => {
-            return state.projects;
-        });
-
-        // this.projects = this.store.select('projects');
+        this.projects = this.store.select('projects');
+        this.filters = this.store.select('filters');
     }
 }

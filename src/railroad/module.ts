@@ -1,7 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BaseComponent } from './base/base';
 import { CoreModule } from './core/module';
@@ -16,15 +15,13 @@ import { appLoad } from './app-load';
     exports: [
         BaseComponent,
         RailroadRouterModule,
-        CoreModule,
-        NgbModule
+        CoreModule
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         CoreModule,
-        RailroadRouterModule,
-        NgbModule.forRoot()
+        RailroadRouterModule
     ],
     providers: [
         {

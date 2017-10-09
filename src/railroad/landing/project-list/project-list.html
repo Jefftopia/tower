@@ -1,4 +1,5 @@
 <div>
-    <rr-project-table [projects]="projects"></rr-project-table>
-    <!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination> -->
+    <button>Add Project</button>
+    <button>Export to PDF</button>
+    <rr-project-table [projects]="projects" [filters]="filters"></rr-project-table>
 </div>
