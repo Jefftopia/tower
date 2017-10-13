@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "project": {
-        "name": "railroad-project-dashboard"
+        "name": "septa-calculator"
     },
     "apps": [
         {
@@ -10,14 +10,14 @@
             "assets": [
                 "assets",
                 "favicon.ico",
-                "railroad-options.json",
+                "septa-options.json",
                 "api"
             ],
             "index": "index.html",
             "main": "main.ts",
             "polyfills": "polyfills.ts",
             "tsconfig": "tsconfig.browser.json",
-            "prefix": "rr",
+            "prefix": "septa",
             "styles": [
                 "styles.scss"
             ],

@@ -1,22 +1,15 @@
 {
-  "name": "railroad-project-dashboard",
+  "name": "septa-project-dashboard",
   "version": "0.1.0-SNAPSHOT",
-  "description": "Railroad Project Dashboard",
+  "description": "septa-calculator",
   "scripts": {
-    "build:users": "node ./bin/ndjson2json ./data/users.json > ./api/users.json",
-    "build:compliance": "node ./bin/ndjson2json ./data/compliances.json > ./api/compliances.json",
-    "build:prescription": "node ./bin/ndjson2json ./data/prescriptions.json > ./api/prescriptions.json",
-    "build:api": "npm run build:users && npm run build:compliance && npm run build:prescription",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "build:prod": "ng build --prod",
-    "watch": "ng build --watch",
     "serve:static": "cd dist && http-server --cors",
     "lint": "npm run ts-lint && npm run scss-lint",
     "scss-lint": "./node_modules/sass-lint/bin/sass-lint.js -c scsslint.yml -v -q",
-    "ts-lint": "./node_modules/.bin/tslint --type-check -c tslint.json --project . './src/railroad/**/*.ts'",
-    "lint:fix": "./node_modules/.bin/tslint --fix --type-check -c tslint.json --project . './src/railroad/**/*.ts'"
+    "ts-lint": "./node_modules/.bin/tslint --type-check -c tslint.json --project . './src/septa/**/*.ts'"
   },
   "license": "MIT",
   "dependencies": {

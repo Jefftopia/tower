@@ -1,19 +1,19 @@
-import { IRailroadOptions } from './railroad/core/interfaces';
-import { CONFIG_TOKEN } from './railroad/core/constants';
+import { ISeptaOptions } from './septa/core/interfaces';
+import { CONFIG_TOKEN } from './septa/core/constants';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode, NgModuleRef } from '@angular/core';
-import { RailroadModule } from './railroad/module';
+import { SeptaModule } from './septa/module';
 
 import './styles.scss';
 
-const windowRef: RailroadWindow = window;
-const configApi: string = windowRef.railroadOptions.fetchUrl;
+const windowRef: SeptaWindow = window;
+const configApi: string = windowRef.septaOptions.fetchUrl;
 
 if (process.env.ENV === 'production') {
     enableProdMode();
 }
 
-export function parseOptions(options: IRailroadOptions): Promise<NgModuleRef<RailroadModule>> {
+export function parseOptions(options: ISeptaOptions): Promise<NgModuleRef<SeptaModule>> {
     return platformBrowserDynamic(
         [
             {
@@ -21,10 +21,10 @@ export function parseOptions(options: IRailroadOptions): Promise<NgModuleRef<Rai
                 useValue: options
             }
         ]
-    ).bootstrapModule(RailroadModule);
+    ).bootstrapModule(SeptaModule);
 }
 
-export function parseResponse(res: Response): Promise<NgModuleRef<RailroadModule>> {
+export function parseResponse(res: Response): Promise<NgModuleRef<SeptaModule>> {
     return res.json().then(parseOptions);
 }
 
